@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Hello World
+    <script>
+      // function sayName(name = 'Default Name') {
+      //   console.log(name);
+      // }
+
+      // sayName();
+      // sayName('Joseph');
+
+      // function logSandwich(bread = 'wheat', protein = 'ham') {
+      //   let sandwichPhrase = `This is a sandwich with ${bread} bread and ${protein}.`;
+      //   console.log(sandwichPhrase);
+      // }
+
+      // logSandwich('white', 'turkey');
+      // logSandwich();
+
+      // let student = {
+      //   graduted: true,
+      //   enrolled: false,
+      // };
+
+      // function checkGraduation(student) {
+      //   if (student === undefined) {
+      //     window.alert('Error');
+      //     return;
+      //   }
+
+      //   if (student.graduted) {
+      //     console.log('Congrats!');
+      //   } else if (student.enrolled) {
+      //     console.log('Keep it going!');
+      //   } else {
+      //     console.log(`You're doing great!`);
+      //   }
+      // }
+
+      // checkGraduation(student);
+
+      // checkGraduation();
+
+      let amountOfQuestions = 50;
+
+      function gradeTest(correctAnswers) {
+        let percentageScore = (correctAnswers / amountOfQuestions) * 100;
+        const displayScore = percentageScore + '%';
+        return displayScore;
+      }
+
+      const timmyGrade = gradeTest(50);
+
+      console.log(timmyGrade);
+    </script>
+  </body>
+</html>
