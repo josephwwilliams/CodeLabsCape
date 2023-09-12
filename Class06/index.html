@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // console.log('Window', this);
+
+      // const person = {
+      //   name: 'Joseph',
+      //   greeting: function () {
+      //     console.log(this.name);
+      //   },
+      // };
+
+      // person.greeting();
+
+      // class User {
+      //   constructor(name) {
+      //     this.name = name;
+      //   }
+
+      //   speak() {
+      //     console.log("Hello! I'm " + this.name);
+      //   }
+      // }
+
+      // let user1 = new User('Joseph');
+      // user1.speak();
+
+      // let user2 = new User('Tim');
+      // user2.speak();
+
+      // class Rectange {
+      //   constructor(width, height) {
+      //     this._width = width;
+      //     this._height = height;
+      //   }
+
+      //   get area() {
+      //     let area = this._height * this._width;
+      //     return area;
+      //   }
+
+      //   set dimensions(value) {
+      //     this._height = value[0];
+      //     this._width = value[1];
+      //   }
+      // }
+
+      // let rectange1 = new Rectange(4, 5);
+
+      // console.log('Before: ', rectange1.area);
+      // rectange1.dimensions = [2, 3];
+      // console.log('After: ', rectange1.area);
+
+      // class Calculator {
+      //   add(x, y) {
+      //     let sum = x + y;
+      //     return sum;
+      //   }
+
+      //   subtract(x, y) {
+      //     let sum = x - y;
+      //     return sum;
+      //   }
+
+      //   divide(x, y) {
+      //     let sum = x / y;
+      //     return sum;
+      //   }
+
+      //   multiply(x, y) {
+      //     let sum = x * y;
+      //     return sum;
+      //   }
+      // }
+
+      // let calculator = new Calculator();
+
+      // console.log(calculator.add(3, 7));
+
+      // console.log(calculator.subtract(10, 2));
+
+      // console.log(calculator.multiply(6, 5));
+
+      // console.log(calculator.divide(8, 2));
+
+      // class Circle {
+      //   #radius;
+
+      //   constructor(diameter) {
+      //     this.#radius = diameter / 2;
+      //   }
+
+      //   get radius() {
+      //     return this.#radius;
+      //   }
+      // }
+
+      // let coolCircle = new Circle(10);
+      // console.log(coolCircle.radius);
+
+      // class Dog {
+      //   constructor(owner) {
+      //     this.owner = owner;
+      //   }
+
+      //   set ownerName(name) {
+      //     this.owner = name;
+      //   }
+      // }
+
+      // let fido = new Dog('George');
+      // console.log(fido);
+      // fido.ownerName = 'Bob';
+      // console.log(fido);
+
+      // class Calculator {
+      //   constructor(favoriteNumber) {
+      //     this.favoriteNumber = favoriteNumber;
+      //   }
+
+      //   set setFavoriteNumber(number) {
+      //     this.favoriteNumber = number;
+      //   }
+
+      //   static add(x, y) {
+      //     let sum = x + y;
+      //     return sum;
+      //   }
+      // }
+
+      // console.log(Calculator.add(3, 4));
+      // let sum = Calculator.add(3, 4);
+      // console.log(sum);
+      // let myCalculator = new Calculator(9);
+      // console.log(myCalculator.favoriteNumber);
+      // myCalculator.setFavoriteNumber = 90;
+      // console.log(myCalculator.favoriteNumber);
+
+      // class User {
+      //   constructor(email, name) {
+      //     this._email = email;
+      //     this._name = name;
+      //   }
+
+      //   greeting() {
+      //     let greet = `Hi my name is ${this._name} and my email is ${this._email}`;
+      //     return greet;
+      //   }
+      // }
+
+      // let bob = new User('email@gmail.com', 'Joseph');
+      // console.log(bob.greeting());
+
+      class English {
+        static verb() {
+          return 'run';
+        }
+
+        static noun() {
+          return 'bob';
+        }
+
+        static adjective() {
+          return 'big';
+        }
+      }
+
+      console.log(English.verb());
+      console.log(English.noun());
+      console.log(English.adjective());
+
+      let sentence = `Watch ${English.adjective()} ${English.noun()} ${English.verb()}`;
+
+      console.log(sentence);
+    </script>
+  </body>
+</html>
+
+<!-- Create a User Class -->
+<!-- Create a constructor -->
+<!-- Have an email and name -->
+<!-- Make a greeting method that returns the email and name -->
+<!-- Greeting: Hi my name is NAME and my email is EMAIL -->
+
+<!-- Create an English Class -->
+<!-- Have 3 static methods -->
+<!-- Method 1: called verb that returns a verb -->
+<!-- Method 2: called noun that returns a noun -->
+<!-- Method 3: called adjective that returns a adjective -->
+<!-- Console.log all of the outputs -->
+<!-- Utilize the power of static methods -->
+<!-- Extra -->
+<!-- Make a sentence with your class -->
+<!-- Extra -->
