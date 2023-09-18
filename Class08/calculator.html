@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>
+          <a href="/Class08/dom-events.html">Dom Events</a>
+        </li>
+        <li>
+          <a href="/Class08/crazy-buttons.html">Crazy Buttons</a>
+        </li>
+        <li>
+          <a href="/Class08/calculator.html">Pricing Calculator</a>
+        </li>
+        <li>
+          <a href="/Class08/stopwatch.html">Stopwatch</a>
+        </li>
+      </ul>
+    </nav>
+    <main class="container">
+      <h1>Calculator</h1>
+      <form class="pricing-form">
+        <div>
+          <label for="price" class="calculator-labels">Price</label>
+          <input
+            type="number"
+            name="price"
+            id="price"
+            value="50"
+            min="0"
+            class="price-input"
+          />
+        </div>
+        <div style="display: flex; justify-content: space-between">
+          <label for="quantity" class="calculator-labels">
+            Quantity
+            <span class="quantity-label"></span>
+          </label>
+          <input
+            type="range"
+            name="quantity"
+            id="quantity"
+            value="1"
+            min="1"
+            max="25"
+            step="1"
+          />
+        </div>
+      </form>
+      <div class="price-output">
+        <h1 class="total-price">0</h1>
+      </div>
+    </main>
+    <script src="calculator.js"></script>
+  </body>
+</html>
