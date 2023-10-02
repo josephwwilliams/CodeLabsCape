@@ -1,0 +1,16 @@
+<!-- <div class="bg-danger">{{ quote }}</div>
+<h1 class="bg-success">Hello World {{ name }}</h1> -->
+<!-- <app-box></app-box>
+<app-box></app-box>
+<app-box></app-box> -->
+<!-- <app-box *ngFor="let box of boxes"></app-box> -->
+<div *ngIf="showSecret">
+  <h1 *ngFor="let user of users">
+    {{ user }}
+  </h1>
+</div>
+<div class="bg-danger" *ngIf="showSecret">This is a secret</div>
+<!-- <input type="text" [(ngModel)]="quote" /> -->
+<!-- <div class="border border-danger m-4">{{ quote }}</div> -->
+<div>The secret is {{ showSecret ? "Showing Secret" : "You can't see" }}</div>
+<button class="btn btn-success" (click)="showSecretFunction()">Click me</button>
