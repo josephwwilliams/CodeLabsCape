@@ -1,10 +1,13 @@
 <div class="row mb-3">
-  <div class="col-md-12">
-    <app-book
-      *ngFor="let currentBook of myBooks"
-      [book]="currentBook"
-      (bookSelected)="handleBookSelected(currentBook)"
-    ></app-book>
+  <div class="col-md-12" *ngFor="let currentBook of myBooks; let idx = index">
+    <app-book [book]="currentBook"></app-book>
+    <button
+      class="float-right btn btn-danger btn-number"
+      style="border: none; font-size: 1rem"
+      (click)="onRemoveBook(idx)"
+    >
+      &minus;
+    </button>
   </div>
 </div>
 <hr />

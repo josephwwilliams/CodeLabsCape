@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BookshelfComponent } from './bookshelf/bookshelf.component';
@@ -10,6 +11,7 @@ import { BookResultsComponent } from './library/book-results/book-results.compon
 import { BookSearchComponent } from './library/book-search/book-search.component';
 import { NavigationComponent } from './shared/navigation/navigation.component';
 import { BookComponent } from './shared/book/book.component';
+import { DropdownDirective } from './shared/directives/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,11 @@ import { BookComponent } from './shared/book/book.component';
     BookResultsComponent,
     BookSearchComponent,
     NavigationComponent,
-    BookComponent
+    BookComponent,
+    DropdownDirective,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
