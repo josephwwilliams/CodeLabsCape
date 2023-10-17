@@ -21,12 +21,12 @@
   >
     <ul class="navbar-nav mt-lg-0 mr-auto mt-2">
       <li class="nav-item">
-        <a class="nav-link" href="#" (click)="onSelectPage('bookshelf')"
+        <a class="nav-link" routerLink="bookshelf" routerLinkActive="active"
           >Bookshelf</a
         >
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" (click)="onSelectPage('library')"
+        <a class="nav-link" routerLink="library" routerLinkActive="active"
           >Library</a
         >
       </li>
@@ -35,7 +35,7 @@
       <li class="nav-item dropdown">
         <a
           class="nav-link dropdown-toggle"
-          href="#"
+          style="cursor: pointer"
           id="navbarDropdownMenuLink"
           data-toggle="dropdown"
           aria-haspopup="true"

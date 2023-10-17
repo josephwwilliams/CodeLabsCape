@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-navigation',
@@ -6,11 +6,6 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./navigation.component.css'],
 })
 export class NavigationComponent {
-  @Output() currentPage = new EventEmitter<string>();
   collapsed: boolean = true;
   show: boolean = false;
-
-  onSelectPage(page: string) {
-    this.currentPage.emit(page);
-  }
 }

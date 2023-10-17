@@ -1,6 +1,6 @@
 <div class="row mb-3">
-  <div class="col-md-12" *ngFor="let currentBook of myBooks; let idx = index">
-    <app-book [book]="currentBook"></app-book>
+  <div class="col-md-12" *ngFor="let currentBook of myBooks; let i = index">
+    <app-book [book]="currentBook" [idx]="i"></app-book>
     <button
       class="float-right btn btn-danger btn-number"
       style="border: none; font-size: 1rem"
@@ -13,6 +13,6 @@
 <hr />
 <div class="row">
   <div class="col-md-12">
-    <button class="btn btn-primary">Add New Book</button>
+    <button class="btn btn-primary" (click)="onNewBook()">Add New Book</button>
   </div>
 </div>
