@@ -1,0 +1,85 @@
+<h1>Add A Book 😎</h1>
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+  <div id="book-data">
+    <!-- Title -->
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': invalidControl('title')
+        }"
+        formControlName="title"
+      />
+      <span *ngIf="invalidControl('title')" class="help-block text-danger"
+        >Enter a valid response</span
+      >
+    </div>
+
+    <!-- Author -->
+    <div class="form-group">
+      <label for="author">Author</label>
+      <input
+        type="text"
+        id="author"
+        name="author"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': invalidControl('author')
+        }"
+        formControlName="author"
+      />
+      <span *ngIf="invalidControl('author')" class="help-block text-danger"
+        >Enter a valid response</span
+      >
+    </div>
+
+    <!-- Image URL -->
+    <div class="form-group">
+      <label for="coverImagePath">Cover Image Path</label>
+      <input
+        type="text"
+        id="coverImagePath"
+        name="coverImagePath"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': invalidControl('coverImagePath')
+        }"
+        formControlName="coverImagePath"
+      />
+      <span
+        *ngIf="invalidControl('coverImagePath')"
+        class="help-block text-danger"
+        >Enter a valid response</span
+      >
+    </div>
+
+    <!-- Genre -->
+    <div class="form-group">
+      <label for="genre">Genre</label>
+      <select
+        id="genre"
+        name="genre"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': invalidControl('genre')
+        }"
+        formControlName="genre"
+      >
+        <option value="mystery">Mystery</option>
+        <option value="self-help">Self-Help</option>
+        <option value="fantasy">Fantasy</option>
+        <option value="science-fiction">Science Fiction</option>
+      </select>
+      <span *ngIf="invalidControl('genre')" class="help-block text-danger"
+        >Enter a valid response</span
+      >
+    </div>
+
+    <!-- Submit Button -->
+    <button class="btn btn-success" type="submit">Submit</button>
+  </div>
+</form>
