@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToastService } from './shared/services/toast.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'BookIt';
+
+  type: 'warn' | 'error' | 'success' = 'warn';
+  constructor(private toastService: ToastService) {}
+
+  createToast() {
+    this.toastService.toast(
+      {
+        type: this.type,
+        message: 'Cool toast!',
+      },
+      3000
+    );
+  }
 }

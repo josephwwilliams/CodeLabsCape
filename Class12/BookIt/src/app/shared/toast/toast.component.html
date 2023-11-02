@@ -1,0 +1,14 @@
+<div class="toastContainer">
+  <div
+    [@fadeInOut]
+    class="customToast"
+    [ngClass]="{
+      'bg-success': toast.type === 'success',
+      'bg-danger': toast.type === 'error',
+      'bg-warning': toast.type === 'warn'
+    }"
+    *ngFor="let toast of toasts | async"
+  >
+    {{ toast.message }}
+  </div>
+</div>

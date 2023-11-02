@@ -1,0 +1,13 @@
+<nav>
+  <ul>
+    <li>
+      <button *ngIf="!(user | async)" (click)="login()">Login</button>
+      <button *ngIf="user | async" (click)="logout()">Logout</button>
+    </li>
+  </ul>
+</nav>
+
+<div>
+  <h1 *ngIf="user | async">Welcome back! {{ user.name }}</h1>
+  <h1 *ngIf="!(user | async)">Create an account!</h1>
+</div>

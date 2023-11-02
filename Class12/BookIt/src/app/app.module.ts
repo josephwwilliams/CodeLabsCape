@@ -16,8 +16,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { BookshelfHomeComponent } from './bookshelf/bookshelf-home/bookshelf-home.component';
 import { BookshelfEditorComponent } from './bookshelf/bookshelf-editor/bookshelf-editor.component';
 import { NotificationComponent } from './shared/notification/notification.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BookFormComponent } from './bookshelf/book-form/book-form.component';
+import { FilterPipe } from './shared/pipes/filter.pipe';
+import { ToastComponent } from './shared/toast/toast.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -35,12 +38,16 @@ import { BookFormComponent } from './bookshelf/book-form/book-form.component';
     BookshelfEditorComponent,
     NotificationComponent,
     BookFormComponent,
+    FilterPipe,
+    ToastComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

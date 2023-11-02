@@ -1,0 +1,4 @@
+<label for="search">Search Heroes</label>
+<input type="text" name="search" id="search" [(ngModel)]="searchFilter" />
+
+<h1 *ngFor="let hero of heroes | filterPipe : searchFilter">{{ hero.name }}</h1>

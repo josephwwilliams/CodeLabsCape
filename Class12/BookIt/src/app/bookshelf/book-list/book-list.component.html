@@ -1,5 +1,8 @@
 <div class="row mb-3 d-flex" style="gap: 1rem">
-  <div class="col-md-12" *ngFor="let currentBook of myBooks; let i = index">
+  <div
+    class="col-md-12"
+    *ngFor="let currentBook of myBooks | sort : sortField; let i = index"
+  >
     <app-book [book]="currentBook" [idx]="i"></app-book>
     <button
       class="float-right btn btn-danger btn-number"
@@ -16,3 +19,7 @@
     <button class="btn btn-primary" (click)="onNewBook()">Add New Book</button>
   </div>
 </div>
+
+<button (click)="onSort()">
+  Sort By {{ sortField === "author" ? "Title" : "Author" }}
+</button>

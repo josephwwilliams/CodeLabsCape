@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastService } from 'src/app/shared/services/toast.service';
 
 @Component({
   selector: 'app-book-form',
@@ -16,7 +17,7 @@ export class BookFormComponent {
     coverImagePath: [null, Validators.required],
   });
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private toastService: ToastService) {}
 
   onSubmit() {
     if (!this.bookForm.valid) {
@@ -25,6 +26,10 @@ export class BookFormComponent {
 
     this.formSubmitted = true;
 
+    this.toastService.toast({
+      type: 'success',
+      message: `${this.bookForm.value.title} Created!`,
+    });
     setTimeout(() => {
       this.formSubmitted = false;
       this.bookForm.reset();

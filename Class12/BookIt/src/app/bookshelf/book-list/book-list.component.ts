@@ -2,6 +2,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Book } from 'src/app/shared/book/book.model';
 import { BookshelfService } from 'src/app/shared/services/bookshelf.service';
+import { ToastService } from 'src/app/shared/services/toast.service';
 
 @Component({
   selector: 'app-book-list',
@@ -10,11 +11,14 @@ import { BookshelfService } from 'src/app/shared/services/bookshelf.service';
 })
 export class BookListComponent {
   myBooks: Book[] = [];
+  sortSwitcher = true;
+  sortField: string = 'author';
 
   constructor(
     private bookshelfService: BookshelfService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private toastService: ToastService
   ) {}
 
   ngOnInit() {
@@ -30,5 +34,15 @@ export class BookListComponent {
 
   onRemoveBook(idx: number) {
     this.bookshelfService.removeBook(idx);
+  }
+
+  onSort() {
+    this.sortSwitcher = !this.sortSwitcher;
+
+    if (this.sortSwitcher) {
+      this.sortField = 'author';
+    } else {
+      this.sortField = 'title';
+    }
   }
 }

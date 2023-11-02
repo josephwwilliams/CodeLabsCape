@@ -30,6 +30,18 @@ export class BookshelfService {
       'Fantasy',
       'https://target.scene7.com/is/image/Target/GUEST_0a53bc0b-ac19-4cf3-bbf5-24a8f46e755a'
     ),
+    new Book(
+      'Gone with the Wind',
+      'Margaret Mitchell',
+      'Adventure | Survival',
+      'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1551144577i/18405.jpg'
+    ),
+    new Book(
+      'Pride and Prejudice',
+      'Jane Austen',
+      'Fiction',
+      'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1487841905i/84979.jpg'
+    ),
   ];
 
   getBook(idx: number) {
@@ -51,5 +63,10 @@ export class BookshelfService {
       this.myBooks.splice(idx, 1);
       this.bookListChanged.next(this.myBooks.slice());
     }
+  }
+
+  updateBook(idx: number, udpatedBook: Book) {
+    this.myBooks[idx] = udpatedBook;
+    this.bookListChanged.next(this.myBooks.slice());
   }
 }
