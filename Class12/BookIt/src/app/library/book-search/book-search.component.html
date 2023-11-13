@@ -1,1 +1,16 @@
-<p>book-search works!</p>
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+  <div class="form-group mr-2">
+    <label for="search">Search</label>
+    <input
+      class="form-control"
+      type="text"
+      name=""
+      id="search"
+      formControlName="search"
+      placeholder="Search"
+    />
+  </div>
+  <button class="btn btn-primary" type="submit" [disabled]="!searchForm.valid">
+    Search
+  </button>
+</form>

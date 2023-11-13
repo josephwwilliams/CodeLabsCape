@@ -6,7 +6,6 @@ import {
   state,
   style,
   transition,
-  group,
   animate,
 } from '@angular/animations';
 
@@ -19,7 +18,6 @@ export class AnimationsModule {
   static fadeInOut = trigger('fadeInOut', [
     state('void', style({ opacity: 0 })),
     state('*', style({ opacity: 1 })),
-    transition('void => *', animate('300ms ease-in-out')),
-    transition('* => void', animate('300ms ease-in-out')),
+    transition('void <=> *', animate('300ms ease-in-out')),
   ]);
 }

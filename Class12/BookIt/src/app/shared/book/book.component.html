@@ -9,10 +9,16 @@
       {{ book.title }}
     </h4>
     <p class="list-group-item-text">
-      {{ book.genre }}
+      {{ book?.genre }}
     </p>
     <p class="list-group-item-text mb-0">
       {{ book.author }}
+    </p>
+    <p class="list-group-item-text mb-0" *ngIf="book.price > 0">
+      {{ book.price | currency }}
+    </p>
+    <p class="list-group-item-text mb-0" *ngIf="book.firstPublishYear">
+      {{ book.firstPublishYear }}
     </p>
   </div>
   <div class="float-right">

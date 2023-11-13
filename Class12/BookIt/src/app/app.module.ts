@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BookshelfComponent } from './bookshelf/bookshelf.component';
@@ -21,6 +21,8 @@ import { BookFormComponent } from './bookshelf/book-form/book-form.component';
 import { FilterPipe } from './shared/pipes/filter.pipe';
 import { ToastComponent } from './shared/toast/toast.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthComponent } from './shared/auth/auth.component';
+import { InterceptorService } from './shared/auth/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BookFormComponent,
     FilterPipe,
     ToastComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

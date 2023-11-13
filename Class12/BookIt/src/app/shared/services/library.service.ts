@@ -1,5 +1,6 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { Book } from '../book/book.model';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -7,28 +8,46 @@ import { Book } from '../book/book.model';
 export class LibraryService {
   bookListChanged = new EventEmitter<Book[]>();
 
-  private allBooks: Book[] = [
-    new Book(
-      'Harry Potter',
-      'JKR',
-      'Fantasy',
-      'https://cdn.vox-cdn.com/thumbor/Gi91EGDL8Szz67xGWFO0jTGy1ec=/0x0:1920x1080/1200x800/filters:focal(755x89:1061x395)/cdn.vox-cdn.com/uploads/chorus_image/image/72144783/harrypotter.0.jpg'
-    ),
-    new Book(
-      'Hatchet',
-      'Gary Paulsen',
-      'Young Adult',
-      'https://m.media-amazon.com/images/I/61OmABKejnL._AC_UF1000,1000_QL80_.jpg'
-    ),
-    new Book(
-      'In The Land of Giants',
-      'Muggsy Bogues',
-      'Bio',
-      'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1387709307i/1306855.jpg'
-    ),
-  ];
+  constructor(private http: HttpClient) {}
+
+  private allBooks: Book[] = [];
 
   getBooks() {
     return this.allBooks.slice();
+  }
+
+  onFetchBooks(searchInput: string) {
+    const formattedSearch = searchInput
+      .replaceAll(' ', '+')
+      .toLocaleLowerCase();
+
+    this.http
+      .get(`http://openlibrary.org/search.json?q=${formattedSearch}`)
+      .subscribe((data) => {
+        this.allBooks = [];
+
+        this.saveBooks(data);
+      });
+  }
+
+  saveBooks(books) {
+    books.docs.map((book) => {
+      const { title, author_name, first_publish_year, isbn } = book;
+      const newBook = new Book(
+        title,
+        author_name ? author_name[0] : '',
+        '',
+        'https://tse2.mm.bing.net/th?id=OIP.I6LGwie40Vw4K8gmV52MKwHaLc&pid=Api&P=0&w=300&h=300',
+        0,
+        first_publish_year,
+        isbn ? isbn[0] : ''
+      );
+
+      console.log('new: ', newBook);
+      this.allBooks.push(newBook);
+    });
+    console.log(this.allBooks);
+
+    this.bookListChanged.next(this.allBooks.slice());
   }
 }
