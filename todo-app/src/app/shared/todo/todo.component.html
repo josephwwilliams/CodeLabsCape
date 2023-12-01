@@ -1,0 +1,10 @@
+<div
+  class="px-20 border py-6 shadow rounded text-center text-lg relative"
+  [ngClass]="{
+    'border-green-700 bg-green-600 text-white': todo.completed,
+  }"
+>
+  {{ todo.chore }}
+  <close-icon (click)="remove()"></close-icon>
+  <complete-icon (click)="complete()" *ngIf="!todo.completed"></complete-icon>
+</div>

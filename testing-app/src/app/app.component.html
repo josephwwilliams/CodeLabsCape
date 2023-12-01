@@ -1,0 +1,10 @@
+<h1 class="text-3xl font-bold underline">Hello world!</h1>
+
+<button appButton (click)="show = true">Info Modal!</button>
+
+<div class="flex flex-col gap-4 max-w-lg">
+  <div appCard>Hey Im a card!</div>
+  <div appCard class="text-red-400">Hey Im a card!</div>
+</div>
+
+<app-modal [showModal]="show" (closeModal)="show = false">Modal!</app-modal>

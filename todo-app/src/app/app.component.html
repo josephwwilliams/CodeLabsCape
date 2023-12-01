@@ -1,0 +1,28 @@
+<main class="min-h-screen flex justify-center items-center flex-col gap-5">
+  <app-create></app-create>
+  <section class="flex flex-col gap-3">
+    <ng-container *ngIf="todos | async as todos">
+      <section *ngIf="todos.length > 0; else noTodos">
+        <app-todo
+          *ngFor="let currentTodo of todos"
+          [todo]="currentTodo"
+        ></app-todo>
+      </section>
+    </ng-container>
+
+    <ng-template #noTodos>
+      <h1 class="text-center py-4 text-6xl">Nothing to do! 😁</h1>
+    </ng-template>
+
+    <ng-container *ngIf="completedTodos | async as todos">
+      <section *ngIf="todos.length > 0">
+        <hr />
+        <h1 class="text-center py-8 text-6xl text-green-700">Completed</h1>
+        <app-todo
+          *ngFor="let currentTodo of todos"
+          [todo]="currentTodo"
+        ></app-todo>
+      </section>
+    </ng-container>
+  </section>
+</main>

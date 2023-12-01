@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "public": "dist/book-it",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "site": "book-it-c3453",
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

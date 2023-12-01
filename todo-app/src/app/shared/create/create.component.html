@@ -1,0 +1,20 @@
+<form
+  [formGroup]="createForm"
+  (ngSubmit)="onSubmit()"
+  class="flex border shadow px-8 py-4 gap-5"
+>
+  <div class="flex flex-col">
+    <label for="todo" class="font-semibold text-lg">Todo</label>
+    <input
+      formControlName="todo"
+      class="border-2 rounded px-4 py-2"
+      type="text"
+      id="todo"
+    />
+  </div>
+  <button
+    class="px-4 py-2 rounded shadow border bg-zinc-100 hover:bg-zinc-200 transition-all duration-200 ease-in-out"
+  >
+    Submit
+  </button>
+</form>
